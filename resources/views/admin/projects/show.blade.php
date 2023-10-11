@@ -21,19 +21,23 @@
                 <p class="text-break">{{$project->description}}</p>
                 <div class="mt-auto">
                   <div class="d-flex">
+                    <div class="col-3 me-2">Tipo:</div>
+                    <div>{{$project->type->name ?? "Non definito"}}</div>
+                  </div>
+                  <div class="d-flex">
                     <div class="col-3 me-2">Data di rilascio:</div>
                     <div>{{$project->release->format("d/m/Y")}}</div>
                   </div>
                   <div>
                     <div class="d-flex">
-                      <div class="col-3 me-2">Disponibile in:</div>
+                      <div class="col-3 me-2">Linguaggi:</div>
                       <div>{{join(", ",json_decode($project["language"]))}}</div>
                     </div>
                   </div>
                   <div>
                     <div class="d-flex">
                       <div class="col-3 me-2">GitHub:</div>
-                      <div>{{$project->link}}</div>
+                      <div><a href="{{$project->link}}">{{$project->link}}</a></div>
                     </div>
                   </div>
                 </div>

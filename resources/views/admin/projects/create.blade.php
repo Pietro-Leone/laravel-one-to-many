@@ -31,6 +31,20 @@
       </div>
 
       <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Tipo</label>
+        <div class="col-sm-10">
+          <select class="form-select" aria-label="Default select example" name="type_id">
+            @foreach ($types as $type)
+            <option value="{{$type->id}}">{{$type->name}}</option>
+            @endforeach
+          </select>
+          @error('description')
+          <div class="invalid-feedback">{{$message}}</div>
+          @enderror
+        </div>
+      </div>
+
+      <div class="row mb-3">
         <label class="col-sm-2 col-form-label">Thumb (URL)</label>
         <div class="col-sm-10">
           <input type="file" class="form-control @error('thumb') is-invalid @enderror" name="thumb" accept="image/*">
@@ -52,7 +66,7 @@
       </div>
 
       <div class="row mb-3">
-        <label class="col-sm-2 col-form-label">Lingua</label>
+        <label class="col-sm-2 col-form-label">Linguaggi</label>
         <div class="col-sm-10">
           <input type="text" class="form-control @error('language') is-invalid @enderror" value="{{old('language')}}"
             name="language">

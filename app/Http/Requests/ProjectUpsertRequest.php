@@ -24,6 +24,7 @@ class ProjectUpsertRequest extends FormRequest
         return [
             "title" => "required|string",
             "description" => "required|string",
+            "type_id" => "exists:types,id",
             "thumb" => "nullable|image",
             "release" => "required|date",
             "language" => "nullable|string",
