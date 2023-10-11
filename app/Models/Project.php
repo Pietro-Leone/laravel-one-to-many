@@ -13,6 +13,7 @@ class Project extends Model
     protected $casts =[
         "release" => "date",
     ];
+
     protected $fillable = [
         "title",
         "slug",
@@ -22,4 +23,8 @@ class Project extends Model
         "language",
         "link",
     ];
+
+    public function type(){
+        $this->belongsTo(Type::class);
+    }
 }
