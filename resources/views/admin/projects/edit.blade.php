@@ -39,7 +39,7 @@
             <option value="{{$type->id}}" {{$project->type_id === $type->id ? "selected" : ""}}>{{$type->name}}</option>
             @endforeach
           </select>
-          @error('description')
+          @error('type_id')
           <div class="invalid-feedback">{{$message}}</div>
           @enderror
         </div>

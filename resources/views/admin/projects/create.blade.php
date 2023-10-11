@@ -38,7 +38,7 @@
             <option value="{{$type->id}}">{{$type->name}}</option>
             @endforeach
           </select>
-          @error('description')
+          @error('type_id')
           <div class="invalid-feedback">{{$message}}</div>
           @enderror
         </div>
